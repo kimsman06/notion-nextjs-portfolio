@@ -17,30 +17,32 @@ export default function ProjectItem({ data }) {
           className="rounded-t-xl"
           src={imgSrc}
           width="100%"
-          height="60%"
+          height="56%"
           layout="responsive"
           objectFit="cover"
           quality={100}
+          alt={title}
         />
-        <div className="p-4 flex flex-col w-full">
+
+        <div className="p-4 flex flex-col justify-items-stretch">
           <h1 className="flex flex-col text-xl">
             {title} <span className="text-sm">({years})</span>
           </h1>
 
-          <p className="mt-1 text-md truncate text-ellipsis">
+          <p className="mt-1 text-md">
             {synopsis === undefined ? "준비중입니다..." : synopsis}
           </p>
 
           <div className="flex items-strat mt-4">
-            <h2 className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30">
+            <h2 className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700/50 w-30">
               {genre === null ? "기타" : genre}
             </h2>
           </div>
 
-          <div className="flex items-strat mt-2">
+          <div className="flex items-strat mt-3">
             {roles.map((aRole) => (
               <h1
-                className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700 w-30"
+                className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700/50 w-30"
                 key={aRole.id}
               >
                 {aRole.name}
