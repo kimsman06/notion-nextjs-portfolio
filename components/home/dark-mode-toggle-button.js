@@ -11,7 +11,7 @@ export default function DarkModeToggleButton() {
         items-center 
         border-0 py-1 px-3 
         focus:outline-none
-        text-base mt-4 md:mt-0
+        text-base md:mt-0
         bg-gray-100 
         hover:bg-gray-50 rounded
         hover:text-orange-500

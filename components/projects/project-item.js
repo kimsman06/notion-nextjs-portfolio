@@ -29,20 +29,20 @@ export default function ProjectItem({ data }) {
             {title} <span className="text-sm">({years})</span>
           </h1>
 
-          <p className="mt-1 text-md">
+          <p className="mt-1 text-sm">
             {synopsis === undefined ? "준비중입니다..." : synopsis}
           </p>
 
           <div className="flex items-strat mt-4">
-            <h2 className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700/50 w-30">
+            <h2 className="px-2 py-1 mr-2 rounded-md bg-sky-100 dark:bg-sky-700/50 w-30 text-xs">
               {genre === null ? "기타" : genre}
             </h2>
           </div>
 
-          <div className="flex items-strat mt-3">
+          <div className="flex items-strat mt-2">
             {roles.map((aRole) => (
               <h1
-                className="px-2 py-1 mr-2 rounded-md bg-sky-200 dark:bg-sky-700/50 w-30"
+                className="px-2 py-1 mr-2 rounded-md bg-sky-100 dark:bg-sky-700/50 w-30 text-xs"
                 key={aRole.id}
               >
                 {aRole.name}

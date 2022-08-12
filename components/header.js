@@ -36,8 +36,8 @@ export default function Header() {
             <Link href="/contact">
               <a className="mr-5 hover:text-gray-900">연락하기</a>
             </Link>
+            <DarkModeToggleButton />
           </nav>
-          <DarkModeToggleButton />
         </div>
       </header>
     </>
