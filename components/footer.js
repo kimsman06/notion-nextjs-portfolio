@@ -36,7 +36,7 @@ export default function Footer() {
           <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
             <a
               className="text-gray-500"
-              href="https://www.facebook.com/profile.php?id=100007984480014"
+              href="https://www.facebook.com/100007984480014"
             >
               <svg
                 fill="currentColor"
