@@ -23,12 +23,12 @@ export default function Header() {
               <span className="ml-3 text-xl">김재준 포트폴리오</span>
             </a>
           </Link>
-          <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <nav className="md:ml-auto md:text-base text-xs flex items-center justify-center">
             <Link href="/">
               <a className="mr-5 hover:text-gray-900">홈</a>
             </Link>
             <Link href="/projects">
-              <a className="mr-5 hover:text-gray-900">영상 포트폴리오</a>
+              <a className="mr-5 hover:text-gray-900">포트폴리오</a>
             </Link>
             <Link href="/about-me">
               <a className="mr-5 hover:text-gray-900">소개합니다</a>
