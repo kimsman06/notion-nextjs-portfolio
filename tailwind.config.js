@@ -7,7 +7,11 @@ module.exports = {
   ],
   darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      lineHeight: {
+        "extra-loose": "5",
+      },
+    },
   },
   plugins: [],
 };

@@ -9,7 +9,8 @@ export default function DarkModeToggleButton() {
         className="
         inline-flex 
         items-center 
-        border-0 py-1 px-3 
+        border-0 py-0.5 px-2 
+        md:py-1 md:px-3 
         focus:outline-none
         text-base md:mt-0
         bg-gray-100 
@@ -27,7 +28,7 @@ export default function DarkModeToggleButton() {
         {/* lightmode */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="visible dark:invisible dark:h-0 dark:w-0 h-5 w-5"
+          className="visible dark:invisible md:dark:h-0 md:dark:w-0 md:h-5 md:w-5 dark:h-0 dark:w-0 h-4 w-4"
           viewBox="0 0 20 20"
           fill="currentColor"
         >
@@ -41,7 +42,7 @@ export default function DarkModeToggleButton() {
         {/* darkmode */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="invisible dark:visible dark:h-5 dark:w-5 h-0 w-0"
+          className="invisible dark:visible md:dark:h-5 md:dark:w-5 md:h-0 md:w-0 dark:h-4 dark:w-4 h-0 w-0"
           viewBox="0 0 20 20"
           fill="currentColor"
         >

@@ -1,37 +1,29 @@
 import Link from "next/link";
+import { CiCamera } from "react-icons/ci";
 import DarkModeToggleButton from "./home/dark-mode-toggle-button";
 
 export default function Header() {
   return (
     <>
       <header className="text-gray-600 body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center justify-center">
           <Link href="/">
             <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
-                viewBox="0 0 24 24"
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-              </svg>
-              <span className="ml-3 text-xl">김재준 포트폴리오</span>
+              <CiCamera className="md:w-10 md:h-10 w-8 h-8 text-white p-2 bg-indigo-500 rounded-full" />
+              <span className="md:ml-3 md:text-2xl text-lg ml-2">
+                김재준 포트폴리오
+              </span>
             </a>
           </Link>
-          <nav className="md:ml-auto md:text-base text-xs flex items-center justify-center">
+          <nav className="md:ml-auto sm:text-base text-sm flex items-center justify-between">
             <Link href="/">
               <a className="mr-5 hover:text-gray-900">홈</a>
             </Link>
+            {/* <Link href="/about-me">
+              <a className="mr-5 hover:text-gray-900">소개합니다</a>
+            </Link> */}
             <Link href="/projects">
               <a className="mr-5 hover:text-gray-900">포트폴리오</a>
-            </Link>
-            <Link href="/about-me">
-              <a className="mr-5 hover:text-gray-900">소개합니다</a>
             </Link>
             <Link href="/contact">
               <a className="mr-5 hover:text-gray-900">연락하기</a>
