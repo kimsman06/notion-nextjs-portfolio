@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Hero from "../components/home/hero";
-import Animation from "../components/home/animation";
 import Layout from "../components/layout";
 
 export default function Home() {
