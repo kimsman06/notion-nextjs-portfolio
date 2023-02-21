@@ -2,7 +2,6 @@ import Layout from "../components/layout";
 import Head from "next/head";
 import ProjectItem from "../components/projects/project-item";
 import { TOKEN, DATABASE_ID } from "../config/index";
-import { useState } from "react";
 
 export default function Projects({ projects }) {
   return (
