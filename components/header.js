@@ -19,9 +19,6 @@ export default function Header() {
             <Link href="/">
               <a className="mr-5 hover:text-gray-900">홈</a>
             </Link>
-            {/* <Link href="/about-me">
-              <a className="mr-5 hover:text-gray-900">소개합니다</a>
-            </Link> */}
             <Link href="/projects">
               <a className="mr-5 hover:text-gray-900">포트폴리오</a>
             </Link>

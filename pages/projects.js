@@ -11,7 +11,7 @@ export default function Projects({ projects }) {
         <meta name="description" content="제작한 영상들을 볼 수 있습니다." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
+      <div className="max-w-sm md:container mx-auto flex px-5 py-5 md:flex-row flex-col items-center">
         <div className="flex flex-col items-center justify-center min-h-screen mb-10">
           <h1 className="text-2xl font-bold md:text-4xl mb-8">
             총 포트폴리오 :
