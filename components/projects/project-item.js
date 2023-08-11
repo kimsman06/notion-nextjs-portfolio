@@ -1,14 +1,7 @@
 import Image from "next/image";
 
 export default function ProjectItem({ data }) {
-  const title = data.properties.제목.title[0].plain_text;
-  const youtube = data.properties.Youtube.url;
-  const synopsis =
-    data.properties.시놉시스.rich_text[0]?.plain_text || undefined;
-  const imgSrc = data.cover.file?.url || data.cover.external.url;
-  const roles = data.properties.참여부분.multi_select;
-  const genre = data.properties.장르.select?.name || null;
-  const years = data.properties.제작년도.rich_text[0].plain_text;
+  const { title, youtube, synopsis, imgSrc, roles, genre, years } = data;
 
   return (
     <a href={youtube}>
@@ -30,7 +23,7 @@ export default function ProjectItem({ data }) {
           </h1>
 
           <p className="mt-1 text-sm">
-            {synopsis === undefined ? "준비중입니다..." : synopsis}
+            {synopsis === null ? "준비중입니다..." : synopsis}
           </p>
 
           <div className="flex items-strat mt-4">

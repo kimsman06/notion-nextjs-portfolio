@@ -1,7 +1,7 @@
 import Layout from "../components/layout";
 import Head from "next/head";
 import ProjectItem from "../components/projects/project-item";
-import { TOKEN, DATABASE_ID } from "../config/index";
+import clientPromise from "../lib/mongodb";
 
 export default function Projects({ projects }) {
   return (
@@ -15,13 +15,11 @@ export default function Projects({ projects }) {
         <div className="flex flex-col items-center justify-center min-h-screen mb-10">
           <h1 className="text-2xl font-bold md:text-4xl mb-8">
             총 포트폴리오 :
-            <span className="pl-4 text-blue-500">
-              {projects.results.length}
-            </span>
+            <span className="pl-4 text-blue-500">{projects.length}</span>
           </h1>
           <div className="grid gird-cols-1 gap-8 md:grid-cols-2 2xl:grid-cols-4">
-            {projects.results.map((aProject) => (
-              <ProjectItem key={aProject.id} data={aProject} />
+            {projects.map((aProject) => (
+              <ProjectItem key={aProject._id} data={aProject} />
             ))}
           </div>
         </div>
@@ -31,34 +29,11 @@ export default function Projects({ projects }) {
 }
 
 export async function getServerSideProps() {
-  const options = {
-    method: "POST",
-    headers: {
-      Accept: "application/json",
-      "Notion-Version": "2022-02-22",
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${TOKEN}`,
-    },
-    body: JSON.stringify({
-      page_size: 200,
-      sorts: [
-        {
-          property: "제작년도",
-          direction: "descending",
-        },
-        {
-          property: "제목",
-          direction: "ascending",
-        },
-      ],
-    }),
-  };
-  const res = await fetch(
-    `https://api.notion.com/v1/databases/${DATABASE_ID}/query`,
-    options
-  );
+  const client = await clientPromise;
+  const db = client.db("video");
 
-  const projects = await res.json();
+  let projects = await db.collection("data").find({}).toArray();
+  projects = JSON.parse(JSON.stringify(projects));
 
   return {
     props: { projects },
