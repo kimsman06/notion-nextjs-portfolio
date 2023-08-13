@@ -32,7 +32,11 @@ export async function getServerSideProps() {
   const client = await clientPromise;
   const db = client.db("video");
 
-  let projects = await db.collection("data").find({}).toArray();
+  let projects = await db
+    .collection("data")
+    .find({})
+    .sort({ years: -1 })
+    .toArray();
   projects = JSON.parse(JSON.stringify(projects));
 
   return {
